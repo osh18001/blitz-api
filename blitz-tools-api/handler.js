@@ -1,7 +1,7 @@
 const awsServerlessExpress = require('aws-serverless-express');
-const app = require('./src/app');
+const app = require('./src/seed');
 
-const server = awsServerlessExpress.createServer(app);
+const server = awsServerlessExpress.createServer(seed);
 
 exports.handler = (event, context) => {
   return awsServerlessExpress.proxy(server, event, context);

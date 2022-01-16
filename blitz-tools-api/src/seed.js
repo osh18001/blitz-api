@@ -8,7 +8,7 @@ const seedData = async () => {
         const { data : collections } = await axios.get(url);
 
         const collectionPromises = collections.collections.map((collection, i) => {
-            addOrUpdateCollection({ ... collection, id: i + ''});
+            addOrUpdateCollection({ ... collection, test: 'success'});
         });
         await Promise.all(collectionPromises);
     } catch (error) {
@@ -32,5 +32,5 @@ const seedAggregateData = async () => {
     }
 };
 
-//seedData();
+seedData();
 seedAggregateData();
